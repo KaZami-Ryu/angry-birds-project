@@ -102,6 +102,8 @@ public class LevelManager : MonoBehaviour
                     return;
                 }
 
+                if (bird.IsReseting) return;
+
                 if(bird.IsIdleAfterThrow() && State != LevelState.END)
                 {
                     StartCoroutine(bird.ResetBird(3));
