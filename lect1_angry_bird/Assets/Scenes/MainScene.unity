@@ -1198,6 +1198,7 @@ MonoBehaviour:
   levelPrefabs:
   - {fileID: 5763409499210174006, guid: 93ec8276532d5fb47bb067bec295aefd, type: 3}
   - {fileID: 5763409499210174006, guid: c184828c877bf1a4fb6165f0b549f08c, type: 3}
+  - {fileID: 5763409499210174006, guid: 1684f6c916b8b58418f8a78263f2422c, type: 3}
   mainMenuPanel: {fileID: 1142685742}
   gamePanel: {fileID: 519208376}
   scoreText: {fileID: 1095118703}

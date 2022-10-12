@@ -26,28 +26,11 @@ public class AudioManager : MonoBehaviour
         set { audioManager = value; }
     }
 
-    private AudioState audioState;
-
-    public AudioState State
-    {
-        get { return audioState; }
-        set { audioState = value; }
-    }
-
-    private bool _stateSwitch;
-
-    public bool isSwitchingStates
-    {
-        get { return _stateSwitch; }
-        set { _stateSwitch = value; }
-    }
-
 
     #endregion
 
     #region Private Variables
 
-    private int currentPlayingIndex;
 
     #endregion
 
@@ -62,26 +45,12 @@ public class AudioManager : MonoBehaviour
 
     public void PlayAudio(AudioState newState)
     {
-        currentPlayingIndex = FindAudio(newState);
-        switch (newState)
+        foreach (var sound in sounds)
         {
-            case AudioState.STARTSOUND:
-                sounds[currentPlayingIndex].Source.Play();
-                break;
-            case AudioState.CRATEHIT:
-                sounds[currentPlayingIndex].Source.Play();
-                break;
-            case AudioState.MONSTERHIT:
-                sounds[currentPlayingIndex].Source.Play();
-                break;
-            case AudioState.STRECH:
-                sounds[currentPlayingIndex].Source.Play();
-                break;
-            case AudioState.THROW:
-                sounds[currentPlayingIndex].Source.Play();
-                break;
-            default:
-                break;
+            if (sound.State == newState)
+            {
+                sound.Source.Play();
+            }
         }
     }
 
@@ -90,17 +59,6 @@ public class AudioManager : MonoBehaviour
 
     #region Helper Functions
 
-    private int FindAudio(AudioState _state)
-    {
-        for (int i = 0; i < sounds.Count; i++)
-        {
-            if(sounds[i].State == _state)
-            {
-                return i;
-            }
-        }
-        return 0;
-    }
 
     #endregion
 }

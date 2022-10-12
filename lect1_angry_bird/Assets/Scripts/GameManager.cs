@@ -198,9 +198,13 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    #region ButtonClicks
+
     public void StartGame()
     {
         SwitchStates(GameState.Init);
     }
+
+    #endregion
 
 }
